@@ -7,7 +7,7 @@ from flask import Flask
 from flask_ask import Ask, statement, question, session
 
 app = Flask(__name__)
-ask = Ask(app, '/alexa-tv-remote')
+ask = Ask(app, '/')
 
 @ask.launch
 def start_skill():

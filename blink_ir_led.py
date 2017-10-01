@@ -1,7 +1,7 @@
 import os
 import time
 
-time_between_press = 0.2
+time_between_press = 0.6
 
 # LIRC conf file when finding out blink values for IR LED
 lirc_file_conf = '~/lgremote2'
@@ -56,6 +56,6 @@ def change_volume(volume_value, increase_or_decrease_volume):
     elif increase_or_decrease_volume == 'decrease' or increase_or_decrease_volume == 'lower':
         key = 'KEY_VOLUMEDOWN'
 
-    for x in range (0, volume_value):
+    for x in range (0, int(volume_value)):
         time.sleep(time_between_press)
         os.system('irsend SEND_ONCE {} {}'.format(lirc_file_conf, key))
