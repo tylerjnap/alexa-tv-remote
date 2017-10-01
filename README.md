@@ -20,6 +20,20 @@ white -> pin 3
 
 Software library for using IR LEDs on Linux machines
 
+## IR LED commands
+
+```
+irsend: 00000000000022dd KEY_OK
+irsend: 000000000000da25 KEY_EXIT
+irsend: 00000000000002fd KEY_UP
+irsend: 000000000000827d KEY_DOWN
+irsend: 000000000000c03f KEY_VOLUMEDOWN
+irsend: 00000000000040bf KEY_VOLUMEUP
+irsend: 000000000000d02f KEY_MENU
+irsend: 00000000000010ef KEY_POWER
+irsend: 000000000000906f KEY_MUTE
+``
+
 ### How to create a new config file
 
 ```

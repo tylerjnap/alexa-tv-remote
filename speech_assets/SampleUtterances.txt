@@ -1,4 +1,12 @@
-ChangeChannelIntent go to {channel_name}
-ChangeChannelIntent change to {channel_name}
-ChangeChannelIntent put on {channel_name}
-ChangeChannelIntent change channel to {channel_name}
+ChangePowerIntent turn the t.v. {power_value}
+ChangePowerIntent turn t.v. {power_value}
+ChangePowerIntent t.v. {power_value}
+
+ChangeSourceIntent go to {source_value}
+ChangeSourceIntent change source to {source_value}
+ChangeSourceIntent change the source to {source_value}
+
+MuteIntent {mute_value} the t.v.
+
+ChangeVolumeIntent turn the volume {increase_or_decrease_volume} by {volume_value}
+ChangeVolumeIntent {increase_or_decrease_volume} by {volume_value}

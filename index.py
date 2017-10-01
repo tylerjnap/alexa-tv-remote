@@ -1,3 +1,6 @@
+import os
+import time
+
 import json
 from pprint import pprint
 
@@ -5,27 +8,94 @@ from flask import Flask
 from flask_ask import Ask, statement, question, session
 
 app = Flask(__name__)
-ask = Ask(app, '/alexa_remote_control')
+ask = Ask(app, '/alexa-tv-remote')
 
 @ask.launch
 def start_skill():
-    welcome_message = 'Which channel do you want me to put on?'
+    welcome_message = 'How should the t.v. update?'
     return question(welcome_message)
 
-@ask.intent('ChangeChannelIntent')
-def change_channel(channel_name):
+@ask.intent('ChangePowerIntent')
+def change_power(power_value):
+    print power_value
 
-    #Look up code for changing channel
-    ##
-    print channel_name
-    # with open('channel_list.json') as data_file:
-    #     channel_list = json.load(data_file)
-    # channel_number = channel_list[channel_name]
-    # print channel_number
-    # Run function for changing channel on Pi
-    ##
-    # Tell user that Alexa is changing the channel
-    text = 'Changing the channel to {}'.format(channel_name)
+    # Blink LED
+    # os.system('irsend SEND_ONCE ~/lgremote2 KEY_POWER')
+
+    text = 'Turning the t.v. {}'.format(power_value)
+    return statement(text)
+
+@ask.intent('ChangeSourceIntent')
+def change_source(source_value):
+    print source_value
+
+    # Blink LED
+    # if source_value == 'cable box':
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_MENU)
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_DOWN)
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_DOWN)
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_OK)
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_EXIT)
+    # elif source_value == 'h.d.m.i. two':
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_MENU)
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_DOWN)
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_DOWN)
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_DOWN)
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_OK)
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_EXIT)
+    # elif source_value == 'x. box':
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_MENU)
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_DOWN)
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_DOWN)
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_DOWN)
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_DOWN)
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_OK)
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 KEY_EXIT)
+
+    text = 'Changing source to {}'.format(source_value)
+    return statement(text)
+
+@ask.intent('MuteIntent')
+def change_mute(mute_value):
+    print mute_value
+
+    # Blink LED
+    # os.system('irsend SEND_ONCE ~/lgremote2 KEY_MUTE)
+
+    text = 'Will {} to t.v.'.format(mute_value)
+    return statement(text)
+
+@ask.intent('ChangeVolumeIntent')
+def change_volume(volume_value, increase_or_decrease_volume):
+    print volume_value
+    print increase_or_decrease_volume
+
+    if increase_or_decrease_volume == 'higher' or increase_or_decrease_volume == 'increase' or increase_or_decrease_volume == 'raise':
+        key = 'KEY_VOLUMEUP'
+    elif increase_or_decrease_volume == 'decrease' or increase_or_decrease_volume == 'lower':
+        key = 'KEY_VOLUMEDOWN'
+
+    # Blink LED
+    # for x in range (0, volume_value):
+    #     time.sleep(0.5)
+    #     os.system('irsend SEND_ONCE ~/lgremote2 {}'.format(key))
+
+    text = 'Updating the volume by {}'.format(volume_value)
     return statement(text)
 
 if __name__ == '__main__':

@@ -1,11 +1,42 @@
 {
   "intents": [
     {
-      "intent": "ChangeChannelIntent",
+      "intent": "ChangePowerIntent",
       "slots": [
         {
-          "name": "channel_name",
-          "type": "LIST_OF_CHANNELS"
+          "name": "power_value",
+          "type": "LIST_OF_POWERS"
+        }
+      ]
+    },
+    {
+      "intent": "ChangeSourceIntent",
+      "slots": [
+        {
+          "name": "source_value",
+          "type": "LIST_OF_SOURCES"
+        }
+      ]
+    },
+    {
+      "intent": "MuteIntent",
+      "slots": [
+        {
+          "name": "mute_value",
+          "type": "LIST_OF_MUTES"
+        }
+      ]
+    },
+    {
+      "intent": "ChangeVolumeIntent",
+      "slots": [
+        {
+          "name": "increase_or_decrease_volume",
+          "type": "LIST_OF_VOLUMES"
+        },
+        {
+          "name": "volume_value",
+          "type": "AMAZON.NUMBER"
         }
       ]
     }
