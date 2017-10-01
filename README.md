@@ -12,6 +12,11 @@ https://www.hackster.io/austin-stanton/creating-a-raspberry-pi-universal-remote-
 * Once on the Raspberry Pi, cd into the directory of the app and run `sudo python index.py`
 * To shutdown the Raspberry, run the following command `sudo shutdown -h now`
 
+## Start ngrok
+```
+ngrok http 5000
+```
+
 ## LIRC
 
 [Link](http://lirc.sourceforge.net/)
