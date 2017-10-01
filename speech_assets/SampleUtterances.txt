@@ -1,0 +1,4 @@
+ChangeChannelIntent go to {channel_name}
+ChangeChannelIntent change to {channel_name}
+ChangeChannelIntent put on {channel_name}
+ChangeChannelIntent change channel to {channel_name}

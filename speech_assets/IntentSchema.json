@@ -1,0 +1,13 @@
+{
+  "intents": [
+    {
+      "intent": "ChangeChannelIntent",
+      "slots": [
+        {
+          "name": "channel_name",
+          "type": "LIST_OF_CHANNELS"
+        }
+      ]
+    }
+  ]
+}
