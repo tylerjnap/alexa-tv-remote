@@ -2,6 +2,8 @@ ChangePowerIntent turn the t.v. {power_value}
 ChangePowerIntent turn the t.v. back {power_value}
 ChangePowerIntent turn t.v. {power_value}
 ChangePowerIntent t.v. {power_value}
+ChangePowerIntent turn it {power_value}
+ChangePowerIntent turn it back {power_value}
 
 ChangeSourceIntent go to {source_value}
 ChangeSourceIntent change source to {source_value}
