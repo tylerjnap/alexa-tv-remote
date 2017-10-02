@@ -1,3 +1,9 @@
+# Control TV through voice commands
+
+Actions are initiated through voice commands through Amazon Alexa Skill, which then gets relayed to the internet connected Raspberry Pi, which then sends the correct signal through the IR LED to the TV to turn it on, increase the volume, etc.
+
+Basically, it makes your TV voice controlled through Alexa.
+
 ## How to use
 Initiate skill
 ```
