@@ -2,6 +2,8 @@
 Initiate skill
 ```
 "Alexa, ask the TV to update."
+or
+"Alex, tell the TV to update"
 ```
 Turn TV on/off
 ```
