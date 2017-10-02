@@ -29,7 +29,7 @@ def change_source(source_value):
 
     blink_ir_led.change_source(source_value)
 
-    text = 'Changing source to {}'.format(source_value)
+    text = 'Changing the source to {}'.format(source_value)
     return statement(text)
 
 @ask.intent('MuteIntent')
@@ -38,7 +38,7 @@ def change_mute(mute_value):
 
     blink_ir_led.change_mute()
 
-    text = 'Will {} to t.v.'.format(mute_value)
+    text = 'Will {} the t.v.'.format(mute_value)
     return statement(text)
 
 @ask.intent('ChangeVolumeIntent')
