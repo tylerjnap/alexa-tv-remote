@@ -2,7 +2,9 @@ import os
 import time
 
 time_between_press_initial = 1.5
-time_between_press_source = 0.2
+time_between_press_source = 0.1
+time_between_press_before_exit = 0.5
+
 time_between_press_volume = 0.2
 
 # LIRC conf file when finding out blink values for IR LED
@@ -20,7 +22,7 @@ def change_source(source_value):
         os.system('irsend SEND_ONCE {} KEY_DOWN'.format(lirc_file_conf))
         time.sleep(time_between_press_source)
         os.system('irsend SEND_ONCE {} KEY_OK'.format(lirc_file_conf))
-        time.sleep(time_between_press_source)
+        time.sleep(time_between_press_before_exit)
         os.system('irsend SEND_ONCE {} KEY_EXIT'.format(lirc_file_conf))
     elif source_value == 'HDMI2':
         os.system('irsend SEND_ONCE {} KEY_MENU'.format(lirc_file_conf))
@@ -32,7 +34,7 @@ def change_source(source_value):
         os.system('irsend SEND_ONCE {} KEY_DOWN'.format(lirc_file_conf))
         time.sleep(time_between_press_source)
         os.system('irsend SEND_ONCE {} KEY_OK'.format(lirc_file_conf))
-        time.sleep(time_between_press_source)
+        time.sleep(time_between_press_before_exit)
         os.system('irsend SEND_ONCE {} KEY_EXIT'.format(lirc_file_conf))
     elif source_value == 'Xbox':
         os.system('irsend SEND_ONCE {} KEY_MENU'.format(lirc_file_conf))
@@ -46,7 +48,7 @@ def change_source(source_value):
         os.system('irsend SEND_ONCE {} KEY_DOWN'.format(lirc_file_conf))
         time.sleep(time_between_press_source)
         os.system('irsend SEND_ONCE {} KEY_OK'.format(lirc_file_conf))
-        time.sleep(time_between_press_source)
+        time.sleep(time_between_press_before_exit)
         os.system('irsend SEND_ONCE {} KEY_EXIT'.format(lirc_file_conf))
 
 def change_mute():
