@@ -17,6 +17,29 @@ https://www.hackster.io/austin-stanton/creating-a-raspberry-pi-universal-remote-
 ngrok http 5000
 ```
 
+## TMUX
+Allows you to SSH into a Raspberry Pi, create terminal sessions, initiate processes, and exit without terminating them.
+
+Create new session
+```
+tmux
+```
+
+Detach from session
+```
+CTRL+b then d
+```
+
+List sessions
+```
+tmux ls
+```
+
+Attach to specific session
+```
+tmux attach -t <SESSION_NUMBER>
+```
+
 ## LIRC
 
 [Link](http://lirc.sourceforge.net/)
