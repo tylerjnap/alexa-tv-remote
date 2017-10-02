@@ -2,8 +2,8 @@ import os
 import time
 
 time_between_press_initial = 1.5
-time_between_press_source = 0.5
-time_between_press_volume = 0.5
+time_between_press_source = 0.2
+time_between_press_volume = 0.2
 
 # LIRC conf file when finding out blink values for IR LED
 lirc_file_conf = '~/lgremote2'
