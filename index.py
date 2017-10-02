@@ -46,7 +46,7 @@ def change_volume(volume_value, increase_or_decrease_volume):
     print volume_value
     print increase_or_decrease_volume
 
-    blink_ir_led.change_volume(volume_value, increase_or_decrease_volume)
+    blink_ir_led.change_volume(int(volume_value), increase_or_decrease_volume)
 
     text = 'Updating the volume by {}'.format(volume_value)
     return statement(text)

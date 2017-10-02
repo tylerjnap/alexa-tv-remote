@@ -61,6 +61,9 @@ def change_volume(volume_value, increase_or_decrease_volume):
     elif increase_or_decrease_volume == 'decrease' or increase_or_decrease_volume == 'lower':
         key = 'KEY_VOLUMEDOWN'
 
-    for x in range (0, int(volume_value)):
+    if volume_value > 20:
+        volume_value = 20
+
+    for x in range (0, volume_value):
         time.sleep(time_between_press_volume)
         os.system('irsend SEND_ONCE {} {}'.format(lirc_file_conf, key))
