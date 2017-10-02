@@ -1,4 +1,5 @@
 ChangePowerIntent turn the t.v. {power_value}
+ChangePowerIntent turn the t.v. back {power_value}
 ChangePowerIntent turn t.v. {power_value}
 ChangePowerIntent t.v. {power_value}
 
@@ -10,3 +11,4 @@ MuteIntent {mute_value} the t.v.
 
 ChangeVolumeIntent turn the volume {increase_or_decrease_volume} by {volume_value}
 ChangeVolumeIntent {increase_or_decrease_volume} by {volume_value}
+ChangeVolumeIntent {increase_or_decrease_volume} the volume by {volume_value}
