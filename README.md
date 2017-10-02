@@ -1,23 +1,32 @@
-http://www.raspberry-pi-geek.com/Archive/2015/10/Raspberry-Pi-IR-remote
-https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/alexa-skills-kit-voice-design-best-practices
-https://www.hackster.io/austin-stanton/creating-a-raspberry-pi-universal-remote-with-lirc-2fd581
+## How to use
+Initiate skill
+```
+"Alexa, ask the TV to update."
+```
+Turn TV on/off
+```
+"Turn the TV on."
+```
+Change source (cable box, Xbox, HDMI2)
+```
+"Change the source to the cable box."
+```
+Increase/decrease volume
+```
+"Increase the volume by five."
+```
+Mute/unmute the TV
+```
+"Mute the TV."
+```
 
-## Setup
+## Quick start for hardware
 * ssh into the Raspberry Pi via the following command `ssh pi@192.168.0.16`
-* `vncserver`
-* Open VNC Viewer
-* Head to the where the `vncserver` command sent you
-* Download a VNC on Raspberry Pi and Computer. Tuturial [here](https://www.raspberrypi.org/documentation/remote-access/vnc/)
-* Other commands can be found [here](https://www.raspberrypi.org/guides/teachers/vnc-classroom-guide.md) to help start on Raspberry Pi
-* Once on the Raspberry Pi, cd into the directory of the app and run `sudo python index.py`
-* To shutdown the Raspberry, run the following command `sudo shutdown -h now`
+* `tmux` then `cd alexa-tv-remote` then `python index.py`; `CTRL+b then d` to exit tmux session
+* `tmux` then `cd alexa-tv-remote` then `./ngrok http 5000` (take this URL and add to Amazon Alexa Skill dashboard); `CTRL+b then d` to exit tmux session
+* To shutdown the Raspberry, if need be, run the following command `sudo shutdown -h now`
 
-## Start ngrok
-```
-ngrok http 5000
-```
-
-## TMUX
+## TMUX Overview
 Allows you to SSH into a Raspberry Pi, create terminal sessions, initiate processes, and exit without terminating them.
 
 Create new session
@@ -40,7 +49,7 @@ Attach to specific session
 tmux attach -t <SESSION_NUMBER>
 ```
 
-## LIRC
+## LIRC Overview
 
 [Link](http://lirc.sourceforge.net/)
 
@@ -124,7 +133,7 @@ sudo cp lgremote.conf /etc/lirc/lircd.conf
 sudo cp ~/lircd.conf /etc/lirc/lircd.conf
 ```
 
-## Programmed LIRC commands
+### Programmed LIRC commands
 
 ```
 KEY_OK
@@ -137,3 +146,7 @@ KEY_MENU
 KEY_POWER
 KEY_MUTE
 ```
+
+## Important links
+- [Blog turning RPi into remote](http://www.raspberry-pi-geek.com/Archive/2015/10/Raspberry-Pi-IR-remote)
+- [Another blog turning RPi into remote](https://www.hackster.io/austin-stanton/creating-a-raspberry-pi-universal-remote-with-lirc-2fd581)
