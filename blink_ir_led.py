@@ -55,6 +55,7 @@ def change_mute():
     os.system('irsend SEND_ONCE {} KEY_MUTE'.format(lirc_file_conf))
 
 def change_volume(volume_value, increase_or_decrease_volume):
+    key = ''
     if increase_or_decrease_volume == 'higher' or increase_or_decrease_volume == 'increase' or increase_or_decrease_volume == 'raise':
         key = 'KEY_VOLUMEUP'
     elif increase_or_decrease_volume == 'decrease' or increase_or_decrease_volume == 'lower':
