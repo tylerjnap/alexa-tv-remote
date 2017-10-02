@@ -1,7 +1,7 @@
 import os
 import time
 
-time_between_press_source = 2.0
+time_between_press_source = 1.5
 time_between_press_volume = 0.5
 
 # LIRC conf file when finding out blink values for IR LED
