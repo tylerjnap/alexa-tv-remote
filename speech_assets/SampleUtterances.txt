@@ -8,6 +8,8 @@ ChangePowerIntent turn it back {power_value}
 ChangeSourceIntent go to {source_value}
 ChangeSourceIntent change source to {source_value}
 ChangeSourceIntent change the source to {source_value}
+ChangeSourceIntent change it to {source_value}
+ChangeSourceIntent change it to the {source_value}
 
 MuteIntent {mute_value} the t.v.
 
