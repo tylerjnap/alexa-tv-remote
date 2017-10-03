@@ -18,9 +18,13 @@ def start_skill():
 def change_power(power_value):
     print power_value
 
-    blink_ir_led.change_power(power_value)
+    r = blink_ir_led.change_power(power_value)
 
-    text = 'Turning the t.v. {}'.format(power_value)
+    if r == None:
+        text = 'Sorry, I could not find that command.'
+    else:
+        text = 'Turning the t.v. {}'.format(power_value)
+
     return statement(text)
 
 @ask.intent('ChangeSourceIntent')
