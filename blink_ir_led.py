@@ -10,7 +10,10 @@ time_between_press_volume = 0.15
 # LIRC conf file when finding out blink values for IR LED
 lirc_file_conf = '~/lgremote2'
 
-def change_power():
+def change_power(power_value):
+    if power_value != 'on' or power_value != 'off':
+        return
+
     os.system('irsend SEND_ONCE {} KEY_POWER'.format(lirc_file_conf))
 
 def change_source(source_value):

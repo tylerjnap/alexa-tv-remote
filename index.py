@@ -18,7 +18,7 @@ def start_skill():
 def change_power(power_value):
     print power_value
 
-    blink_ir_led.change_power()
+    blink_ir_led.change_power(power_value)
 
     text = 'Turning the t.v. {}'.format(power_value)
     return statement(text)
