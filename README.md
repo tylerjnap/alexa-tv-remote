@@ -1,5 +1,7 @@
 # Amazon Alexa TV Remote
 
+See [this blog post](https://medium.com/@tylernappy/make-your-tv-voice-controlled-through-amazon-alexa-and-raspberry-pi-a6373b7cf871) of a tutorial on how to build this yourself.
+
 Actions are initiated through voice commands through Amazon Alexa Skill, which then gets relayed to the internet connected Raspberry Pi, which then sends the correct signal through the IR LED to the TV to turn it on, increase the volume, etc.
 
 Basically, it makes your TV voice controlled through Alexa.
