@@ -154,7 +154,3 @@ KEY_MENU
 KEY_POWER
 KEY_MUTE
 ```
-
-## Important links
-- [Blog turning RPi into remote](http://www.raspberry-pi-geek.com/Archive/2015/10/Raspberry-Pi-IR-remote)
-- [Another blog turning RPi into remote](https://www.hackster.io/austin-stanton/creating-a-raspberry-pi-universal-remote-with-lirc-2fd581)
