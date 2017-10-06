@@ -184,7 +184,7 @@ curl -X POST http://url.com/api --data "action=mute&value=None"
 
 ### Increase/decrease volume
 
-_Note: to decrease, pass in negative number.\_
+Note: to decrease, pass in negative number.
 
 ```
 curl -X POST http://url.com/api --data "action=volume&value=< int >"
