@@ -156,3 +156,36 @@ KEY_MENU
 KEY_POWER
 KEY_MUTE
 ```
+
+## API endpoint
+
+Accepts POST request with two parameters:
+
+- `action` (required): What you want remote to do.
+- `value` (required): Value for action. If no value, pass in `None`
+
+### Turn on/off
+
+```
+curl -X POST http://url.com/api --data "action=power&value=<on | off>"
+```
+
+### Change source
+
+```
+curl -X POST http://url.com/api --data "action=source&value=<cable box | HDMI2 | Xbox>"
+```
+
+### Mute TV
+
+```
+curl -X POST http://url.com/api --data "action=mute&value=None"
+```
+
+### Increase/decrease volume
+
+_Note: to decrease, pass in negative number.\_
+
+```
+curl -X POST http://url.com/api --data "action=volume&value=< int >"
+```
