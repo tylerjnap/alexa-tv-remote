@@ -3,7 +3,7 @@ import blink_ir_led
 import json
 from pprint import pprint
 
-from flask import Flask
+from flask import Flask, request
 from flask_ask import Ask, statement, question, session
 
 app = Flask(__name__)
@@ -54,6 +54,28 @@ def change_volume(volume_value, increase_or_decrease_volume):
 
     text = 'Updating the volume by {}'.format(volume_value)
     return statement(text)
+
+# API endpoint
+@app.route('/api', methods=['POST'])
+def api():
+    print request.form
+    action = request.form['action']
+    value = request.form['value']
+    if action == 'power':
+        blink_ir_led.change_power(value)
+    elif action == 'source':
+        blink_ir_led.change_source(value)
+    elif action == 'mute':
+        blink_ir_led.change_mute()
+    elif action == 'volume':
+        if int(value) >= 0:
+            increase_or_decrease_volume = 'increase'
+        elif int(value) < 0:
+            increase_or_decrease_volume = 'decrease'
+        blink_ir_led.change_volume(int(value), increase_or_decrease_volume)
+    else:
+        return "Error", 500
+    return "Updating TV", 200
 
 if __name__ == '__main__':
     app.run(debug=True)
