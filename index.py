@@ -72,7 +72,7 @@ def api():
             increase_or_decrease_volume = 'increase'
         elif int(value) < 0:
             increase_or_decrease_volume = 'decrease'
-        blink_ir_led.change_volume(int(value), increase_or_decrease_volume)
+        blink_ir_led.change_volume(abs(int(value)), increase_or_decrease_volume)
     else:
         return "Error", 500
     return "Updating TV", 200
