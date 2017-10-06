@@ -20,7 +20,7 @@ def change_power(power_value):
 
     r = blink_ir_led.change_power(power_value)
 
-    if r == None:
+    if r == False:
         text = 'Sorry, I could not find that command.'
     else:
         text = 'Turning the t.v. {}'.format(power_value)

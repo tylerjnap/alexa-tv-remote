@@ -2,7 +2,7 @@ import os
 import time
 
 time_between_press_initial = 1.5
-time_between_press_source = 0.1
+time_between_press_source = 0.2
 time_between_press_before_exit = 0.5
 
 time_between_press_volume = 0.15
@@ -11,8 +11,8 @@ time_between_press_volume = 0.15
 lirc_file_conf = '~/lgremote2'
 
 def change_power(power_value):
-    if power_value != 'on' or power_value != 'off':
-        return
+    if power_value != 'on' and power_value != 'off':
+        return False
 
     os.system('irsend SEND_ONCE {} KEY_POWER'.format(lirc_file_conf))
 
