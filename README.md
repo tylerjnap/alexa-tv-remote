@@ -31,7 +31,7 @@ Mute/unmute the TV
 ```
 
 ## Quick start for hardware
-* ssh into the Raspberry Pi via the following command `ssh pi@192.168.0.16`
+* ssh into the Raspberry Pi via the following command `ssh pi@192.168.0.3`
 * `tmux` then `cd alexa-tv-remote` then `python index.py`; `CTRL+b then d` to exit tmux session
 * `tmux` then `cd alexa-tv-remote` then `./ngrok http 5000` (take this URL and add to Amazon Alexa Skill dashboard); `CTRL+b then d` to exit tmux session
 * To shutdown the Raspberry Pi, if need be, run the following command `sudo shutdown -h now`
