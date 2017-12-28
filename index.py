@@ -3,7 +3,7 @@ import blink_ir_led
 import json
 from pprint import pprint
 
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_ask import Ask, statement, question, session
 
 app = Flask(__name__)
@@ -76,6 +76,11 @@ def api():
     else:
         return "Error", 500
     return "Updating TV", 200
+
+# HTML dashboard
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
